@@ -3,4 +3,4 @@ project(TareaExtraclase_1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TareaExtraclase_1 main.cpp)
+add_executable(TareaExtraclase_1 main.cpp List.cpp List.h)
