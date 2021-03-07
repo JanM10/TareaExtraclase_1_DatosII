@@ -46,6 +46,10 @@ void List::DeleteNode(int delData) {
         delPtr = curr;
         curr = curr->next;
         temp->next = curr;
+        if (delPtr == head){
+            head = head->next;
+            temp = NULL;
+        }
         delete delPtr;
         cout << "El valor " << delData << " fue borrado" << endl;
     }
