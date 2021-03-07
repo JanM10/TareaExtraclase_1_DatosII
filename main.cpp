@@ -1,13 +1,18 @@
-#include <iostream>
-#define LOG(x) cout<< x << endl;
+#include <cstdlib>
+#include "List.h"
 using namespace std;
 
-int main() {
+int main(int argc, char** argv) {
 
-    int var = 8;
-    int* ptr = &var;
-    *ptr = 10;
-    LOG(var);
-    cout << "El lugar en memoria es: " << ptr <<endl;
+    List ListaPrueba;
+
+    ListaPrueba.AddNode(3);
+    ListaPrueba.AddNode(5);
+    ListaPrueba.AddNode(7);
+    ListaPrueba.PintList();
+
+    ListaPrueba.DeleteNode(3);
+    ListaPrueba.PintList();
+
     return 0;
 }
