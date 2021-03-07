@@ -9,12 +9,21 @@
 class List {
 private:
 
-    struct node{
+    typedef struct node{
         int data;
         node* next;
-    };
+    }* nodePtr;
+
+    nodePtr head; //Inicio de la lista
+    nodePtr curr; //Current(actual)
+    nodePtr temp; //Temporal
 
 public: //This is where the functions go
+    List();
+    void AddNode(int addData);
+    void DeleteNode(int delData);
+    void PintList();
+
 };
 
 
