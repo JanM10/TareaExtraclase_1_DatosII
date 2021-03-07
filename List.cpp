@@ -51,5 +51,13 @@ void List::DeleteNode(int delData) {
     }
 }
 
+void List::PintList() {
+    curr = head;
+    while (curr != NULL){
+        cout << curr->data << endl;
+        curr = curr->next;
+    }
+}
+
 
 
