@@ -23,6 +23,7 @@ public:
     void Display(); //Displays contents of the data within this class
 
     void * operator new(size_t _newData);
+
     void operator delete(void * _newNext);
 
 private:

@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "Node.h"
+#include "Collector.h"
 
 using namespace std;
 
@@ -15,6 +16,9 @@ Node::Node() {
 }
 void * Node::operator new(size_t _newData) {
     cout<< "Overloading new operator with size: " << _newData << endl;
+//    if (Collector().EstadoActual() != NULL){
+//        void * puntero =
+//    }
     void * puntero = ::new Node();
     //void * p = malloc(size); will also work fine
     return puntero;
