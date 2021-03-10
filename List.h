@@ -17,7 +17,9 @@ public:
     void Print();
 
 private:
-    TNode* head;
+    Node* m_pHead, *m_pTail;
+    int m_Size;
+
 };
 
 

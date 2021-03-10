@@ -3,18 +3,15 @@
 #include "Node.h"
 using namespace std;
 
-int main(int argc, char** argv) {
+Node* miNodo = new Node(10, nullptr);
 
-    List ListaPrueba;
+int main() {
+
+    miNodo->Display();
 
 
-//    ListaPrueba.AddNode(3);
-//    ListaPrueba.AddNode(5);
-//    ListaPrueba.AddNode(7);
-//    ListaPrueba.PintList();
-//
-//    ListaPrueba.DeleteNode(3);
-//    ListaPrueba.PintList();
-
+//    if(miNodo){
+//        delete miNodo;
+//    }
     return 0;
 }

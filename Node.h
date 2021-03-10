@@ -19,6 +19,7 @@ public:
 
     void SetData(int _newData);
     void SetNext(Node* _newNext);
+
     void Display(); //Displays contents of the data within this class
 
 private:

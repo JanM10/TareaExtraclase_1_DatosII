@@ -34,5 +34,13 @@ Node* Node::GetNext() {
 }
 
 void Node::SetData(int _newData) {
+    this->Data = _newData;
+}
 
+void Node::SetNext(Node *_newNext) {
+    this->pNext = _newNext;
+}
+
+void Node::Display() {
+    cout << "Data: " << GetData() << endl;
 }
