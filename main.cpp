@@ -6,9 +6,7 @@ using namespace std;
 int main(int argc, char** argv) {
 
     List ListaPrueba;
-    Node Nodos;
 
-    Nodos.AddNode(3);
 
 //    ListaPrueba.AddNode(3);
 //    ListaPrueba.AddNode(5);

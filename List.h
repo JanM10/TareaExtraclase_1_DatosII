@@ -5,25 +5,19 @@
 #ifndef TAREAEXTRACLASE_1_LIST_H
 #define TAREAEXTRACLASE_1_LIST_H
 
+#include "Node.h"
 
 class List {
+public:
+    List(); //Constructor
+    ~List(); //Destructor - handles the deletion of nodes
+
+    bool Insertar(int data); //Insertion of nodes to list
+
+    void Print();
+
 private:
-
-    typedef struct node{
-        int data;
-        node* next;
-    }* nodePtr;
-
-    nodePtr head; //Inicio de la lista
-    nodePtr curr; //Current(actual)
-    nodePtr temp; //Temporal
-
-public: //This is where the functions go
-    List();
-    void AddNode(int addData);
-    void DeleteNode(int delData);
-    void PintList();
-
+    TNode* head;
 };
 
 
