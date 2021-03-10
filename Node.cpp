@@ -13,6 +13,17 @@ Node::Node() {
 //    this->Data = 0;
 //    this->pNext = nullptr;
 }
+void * Node::operator new(size_t _newData) {
+    cout<< "Overloading new operator with size: " << _newData << endl;
+    void * puntero = ::new Node();
+    //void * p = malloc(size); will also work fine
+    return puntero;
+}
+
+void Node::operator delete(void* _newNext) {
+    cout<< "Overloading delete operator " << endl;
+    free(_newNext);
+}
 
 Node::Node(int _newData, Node *_pNewNext) { //Aqui es donde se hace el overload (Supongo que este el del New de sobrecarga)
     SetData(_newData);

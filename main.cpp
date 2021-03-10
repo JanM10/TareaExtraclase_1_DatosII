@@ -1,22 +1,31 @@
 #include <cstdlib>
 #include "List.h"
 #include "Node.h"
+#include <iostream>
 using namespace std;
+
+int *n;
+int variable = 12;
+int *apuntador = &variable;
 
 List* list = new List();
 
 int main() {
 
-//    for (int i = 0; i < 10; i++){
-//        list->Insertar(i);
-//    }
-    list->Insertar(1);
-    list->Insertar(2);
-    list->Insertar(3);
-    list->Insertar(14);
+//    list->Insertar(2);
+//    list->Insertar(1);
+//    list->Insertar(1);
+//    list->Insertar(3);
+//    list->Insertar(12121212);
+//
+//    list->Print();
 
+    cout << variable << endl;
+    cout << apuntador << endl;
+    variable = NULL;
+    cout << variable << endl;
+    cout << apuntador << endl;
 
-    list->Print();
 
     if (list){
         delete list;
@@ -24,3 +33,8 @@ int main() {
     }
     return 0;
 }
+
+//void pedirDatos(){
+//    cout << "Digite el tamaño que se desea: "; cin>> tamano;
+//}
+
