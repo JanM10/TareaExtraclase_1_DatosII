@@ -3,15 +3,24 @@
 #include "Node.h"
 using namespace std;
 
-Node* miNodo = new Node(10, nullptr);
+List* list = new List();
 
 int main() {
 
-    miNodo->Display();
-
-
-//    if(miNodo){
-//        delete miNodo;
+//    for (int i = 0; i < 10; i++){
+//        list->Insertar(i);
 //    }
+    list->Insertar(1);
+    list->Insertar(2);
+    list->Insertar(3);
+    list->Insertar(14);
+
+
+    list->Print();
+
+    if (list){
+        delete list;
+        list = nullptr;
+    }
     return 0;
 }
