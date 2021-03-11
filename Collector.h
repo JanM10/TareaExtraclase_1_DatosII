@@ -11,13 +11,18 @@ class Collector {
 public:
     Collector();
 
-    bool Insertar(int data); //Insertion of nodes to list
+    bool Insertar(int &data); //Insertion of nodes to list
 
-    void Print();
+    int PrintCollector();
+
+    bool RevisarCollector();
+
+    void* GetPuntero();
 
 private:
     Node* m_pHead, *m_pTail;
     int m_Size;
+    void *puntero;
 
 };
 

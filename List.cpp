@@ -11,24 +11,10 @@ List::List() {
     m_pTail = m_pHead = nullptr;
     m_Size = 0;
 }
-
-List::~List() { //Destructor
-    //Check if we have any data in our list
-    if(m_pHead != nullptr){
-        Node* current = m_pHead;
-
-        while (current != nullptr){
-            Node* next = current->GetNext();
-            delete current;
-            current = next;
-        }
-
-        m_pHead = m_pTail = nullptr;
-    }
-}
-
+//~
 bool List::Insertar(int data) {
     Node* temp = new Node(data, nullptr);
+    cout << "dato: " << data << endl;
 
     if(m_pHead == nullptr){
         m_pHead = temp;
@@ -44,6 +30,49 @@ bool List::Insertar(int data) {
     }
     return false;
 }
+
+//int List::eliminarNodo(int data) { //Destructor
+//    //Check if we have any data in our list
+//    if(m_pHead != nullptr){
+//        Node* current = m_pHead;
+//
+//        while (current != nullptr){
+//            Node* next = current->GetNext();
+//            delete current;
+//            current = next;
+//        }
+//        m_pHead = m_pTail = nullptr;
+//    }
+//}
+
+//int List::eliminarNodo(int data) {
+//    Node* current = m_pHead;
+//    if (data == current->GetData()){
+//        Node* next = current->GetNext();
+//        delete current;
+//        current = next;
+//    } else{
+//        current = current->GetNext();
+//
+//    }
+//}
+
+void List::RemoveFIrst() {
+    if(m_pHead != nullptr){
+        Node* temp;
+        m_pHead = m_pHead->GetNext();
+        delete temp;
+        temp = nullptr;
+    }
+}
+//
+//void List::RemoveLast() {
+//    if (m_pHead != nullptr){
+//        Node* temp = m_pHead;
+//
+//        for (; temp->GetNext())
+//    }
+//}
 
 void List::Print() {
     if (m_pHead != nullptr){

@@ -5,12 +5,14 @@
 #include <iostream>
 using namespace std;
 
-//int *n;
-//int variable = 12;
-//int *apuntador = &variable;
+int variable = 12;
+int variable1 = 23;
+int variable2= 865;
+int *apuntador = &variable;
 
 List* list = new List();
-Collector* listaColector = new Collector();
+Collector* lista = new Collector();
+
 
 int main() {
 
@@ -18,16 +20,22 @@ int main() {
 //    list->Insertar(1);
 //    list->Insertar(1);
 //    list->Insertar(3);
-
-    listaColector->Insertar(10);
-    listaColector->Print();
-
 //    list->Print();
 
-//    cout << variable << endl;
+//    lista->Insertar(1);
+//    lista->Insertar(2);
+//    lista->Insertar(3);
+//    lista->Insertar(variable);
+//    lista->Insertar(variable1);
+//    lista->Insertar(variable2);
+//    lista->Insertar(variable2);
+//    lista->PrintCollector();
+    lista->RevisarCollector();
+
+
+
 //    cout << apuntador << endl;
 //    variable = NULL;
-//    cout << variable << endl;
 //    cout << apuntador << endl;
 
     if (list){
