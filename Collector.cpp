@@ -35,18 +35,20 @@ bool Collector::Insertar(int &data) {
 
 bool Collector::RevisarCollector() {
     if(m_pHead == nullptr){
-        cout << "paso por aqui" << endl;
-        return true;
-    }else{
-        cout << "Ahora paso por aqui" << endl;
+//        cout << "paso por aqui" << endl;
         return false;
+    }else{
+//        cout << "Ahora paso por aqui" << endl;
+        return true;
     }
 }
 
 int Collector::PrintCollector() {
     if (m_pHead != nullptr){
         for (Node* temp = m_pHead; temp != nullptr; temp = temp->GetNext()){
-            cout << "Node Data: " << temp->GetData() << " Puntero: " << temp << endl;
+            cout << "temp: " <<temp<<endl;
+//            cout << "Node Data: " << temp->GetData() << " Puntero: " << temp << endl;
+
         }
     }
     return 0;

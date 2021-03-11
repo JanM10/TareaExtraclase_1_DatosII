@@ -16,10 +16,24 @@ Collector* lista = new Collector();
 
 int main() {
 
-//    list->Insertar(2);
-//    list->Insertar(1);
-//    list->Insertar(1);
+    list->Insertar(2);
+    list->Insertar(4);
+    list->Insertar(1);
+    list->Print();
+//    list->RemoveAt(4);
+    list->RemoveAt(4);
+    list->Print();
+
+//    list->Insertar(5);
+//    list->Print();
+//    lista->PrintCollector();
+//    list->Print();
+
+
 //    list->Insertar(3);
+//    list->Print();
+//
+//    list->RemoveAt(3);
 //    list->Print();
 
 //    lista->Insertar(1);
@@ -30,18 +44,7 @@ int main() {
 //    lista->Insertar(variable2);
 //    lista->Insertar(variable2);
 //    lista->PrintCollector();
-    lista->RevisarCollector();
-
-
-
-//    cout << apuntador << endl;
-//    variable = NULL;
-//    cout << apuntador << endl;
-
-    if (list){
-        delete list;
-        list = nullptr;
-    }
+//    lista->RevisarCollector();
     return 0;
 }
 

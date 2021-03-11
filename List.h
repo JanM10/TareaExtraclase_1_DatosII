@@ -12,7 +12,7 @@ public:
     List(); //Constructor
 
     bool Insertar(int data); //Insertion of nodes to list
-    void RemoveFIrst();
+    void RemoveFirst();
     void RemoveLast();
     bool RemoveAt(int data); //removes node at desired location
 
