@@ -4,11 +4,13 @@
 #include <cstdlib>
 #include <iostream>
 #include "Node.h"
+#include "List.h"
 #include "Collector.h"
 
 using namespace std;
 
 Collector *colecotor = new Collector();
+
 
 Node::Node() {
     SetData(0);
@@ -18,7 +20,7 @@ Node::Node() {
     GetPuntero();
 }
 void * Node::operator new(size_t _newData) {
-    cout<< "Overloading new operator with size: " << _newData << endl;
+//    cout<< "Overloading new operator with size: " << _newData << endl;
     if (colecotor->RevisarCollector()){
         cout << "SE REUTILIZA UNA DIRECCION DE MEMORIA" << endl;
         void * puntero = colecotor->GetPuntero();
@@ -33,16 +35,18 @@ void * Node::operator new(size_t _newData) {
 
 void Node::operator delete(void* _newNext) {
     cout<< "Overloading delete operator " << endl;
-    colecotor->Insertar(reinterpret_cast<int &>(_newNext));
-//    free(_newNext);
-    //Mandarlo al colector
+    colecotor->Insertar(_newNext); //Se esta pasando la direccion de memoria de newNext no la correcta
+    colecotor->PrintCollector();
 }
 
-Node::Node(int _newData, Node *_pNewNext) { //Aqui es donde se hace el overload (Supongo que este el del New de sobrecarga)
+Node::Node(int _newData, Node *_pNewNext) {
     SetData(_newData);
     SetNext(_pNewNext);
-//    this->Data = _data;
-//    this->pNext = _pNewNext;
+}
+
+Node::Node(void *puntero, Node *_next) {
+    SetPuntero(puntero);
+    SetNext(_next);
 }
 
 Node::~Node() {

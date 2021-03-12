@@ -15,8 +15,9 @@ Collector::Collector() {
     puntero = nullptr;
 }
 
-bool Collector::Insertar(int &data) {
-    Node* temp = new Node(data, nullptr);
+bool Collector::Insertar(void* data) {
+//    cout << "Dato que ingresa al collector " << data << endl;
+    Node* temp = new Node(data, nullptr); //AQUI HAY UN ERROR
 
     if(m_pHead == nullptr){
         m_pHead = temp;
@@ -35,10 +36,9 @@ bool Collector::Insertar(int &data) {
 
 bool Collector::RevisarCollector() {
     if(m_pHead == nullptr){
-//        cout << "paso por aqui" << endl;
         return false;
     }else{
-//        cout << "Ahora paso por aqui" << endl;
+        cout << "INICIO DE COLECTOR: " << m_pHead->GetPuntero() << endl;
         return true;
     }
 }
@@ -46,16 +46,42 @@ bool Collector::RevisarCollector() {
 int Collector::PrintCollector() {
     if (m_pHead != nullptr){
         for (Node* temp = m_pHead; temp != nullptr; temp = temp->GetNext()){
-            cout << "temp: " <<temp<<endl;
-//            cout << "Node Data: " << temp->GetData() << " Puntero: " << temp << endl;
-
+            cout << "Direccion de memoria en Collector: " << temp->GetPuntero() << endl; //NO SE ESTA IMPRIMIENDO
         }
     }
     return 0;
 }
 
+void Collector::SetPuntero(void *puntero) {
+    this->puntero = puntero;
+}
+
 void * Collector::GetPuntero() {
-    puntero = &m_pHead;
-    cout << "puntero: " << puntero << endl;
+    puntero = m_pHead;
     return this->puntero;
+}
+
+bool Collector::BorrarDirColector(void *data) {
+    if(m_pHead != nullptr){
+        Node* temp = m_pHead;
+        Node* previous = m_pHead;
+        if(m_pHead->GetPuntero() == data){ //REGRESAR EL ->GetData()
+            m_pHead = m_pHead->GetNext();
+            cout << "temp: " << temp << endl;
+            delete temp; //Se borra temp el cual es el inicio de la lista
+        } else{
+            temp = temp->GetNext();
+            while (temp->GetPuntero() != data){ //REGRESAR EL ->GetData()
+//                cout << "previous: " << previous->GetData() << " data:" << data << endl;
+                previous = temp;
+                temp = temp->GetNext();
+            }
+            cout << "TEMP ES: " << temp << endl;
+            previous->SetNext(temp->GetNext());
+            delete temp;
+
+            return true;
+        }
+        return false;
+    }
 }

@@ -11,12 +11,14 @@ class Collector {
 public:
     Collector();
 
-    bool Insertar(int &data); //Insertion of nodes to list
+    bool Insertar(void* data); //Insertion of nodes to list
+    bool BorrarDirColector(void * data);
 
     int PrintCollector();
 
     bool RevisarCollector();
 
+    void SetPuntero(void *puntero);
     void* GetPuntero();
 
 private:

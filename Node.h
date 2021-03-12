@@ -14,6 +14,7 @@ public:
     Node(); //Constructor
     void * operator new(size_t _data, Node* _next);
     Node(int _data, Node* _next); //Overload of our constructor
+    Node(void* puntero, Node* _next);
     ~Node(); //Destructor (No se utiliza)
 
     int GetData(); //Access the member data outside of this class
@@ -28,7 +29,7 @@ public:
 
     void * operator new(size_t _newData);
 
-    void operator delete(void * _newNext);
+    void operator delete(void * _newNext); //ORIGIANL REGRESAR A ESTE POR SI ACASO
 
 private:
     int Data; //Stores int type data

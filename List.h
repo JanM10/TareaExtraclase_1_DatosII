@@ -15,12 +15,9 @@ public:
     void RemoveFirst();
     void RemoveLast();
     bool RemoveAt(int data); //removes node at desired location
+    bool EliminarDato(int data);
 
     Node* Find(int data);
-
-    int eliminarNodo(int data); //Destructor - handles the deletion of nodes
-
-
 
     void Print();
 

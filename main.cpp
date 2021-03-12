@@ -16,39 +16,33 @@ Collector* lista = new Collector();
 
 int main() {
 
-    list->Insertar(2);
-    list->Insertar(4);
     list->Insertar(1);
+    list->Insertar(2);
+    list->Insertar(3);
+    list->Insertar(4);
+    list->Insertar(5);
+    list->Insertar(6);
+    list->Insertar(7);
     list->Print();
-//    list->RemoveAt(4);
-    list->RemoveAt(4);
+    cout << "_____________________________________" << endl;
+
+    list->EliminarDato(7);
+    lista->PrintCollector();
     list->Print();
+    cout << "_____________________________________" << endl;
+
+    list->Insertar(8);
+    list->Print();
+    cout << "_____________________________________" << endl;
+//    list->Insertar(7);
+//    list->Print();
+
 
 //    list->Insertar(5);
 //    list->Print();
 //    lista->PrintCollector();
 //    list->Print();
 
-
-//    list->Insertar(3);
-//    list->Print();
-//
-//    list->RemoveAt(3);
-//    list->Print();
-
-//    lista->Insertar(1);
-//    lista->Insertar(2);
-//    lista->Insertar(3);
-//    lista->Insertar(variable);
-//    lista->Insertar(variable1);
-//    lista->Insertar(variable2);
-//    lista->Insertar(variable2);
-//    lista->PrintCollector();
-//    lista->RevisarCollector();
-    return 0;
 }
 
-//void pedirDatos(){
-//    cout << "Digite el tamaño que se desea: "; cin>> tamano;
-//}
 
