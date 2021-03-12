@@ -78,7 +78,7 @@ bool List::EliminarDato(int data) {
         Node* previous = m_pHead;
         if(m_pHead->GetData() == data){
             m_pHead = m_pHead->GetNext();
-            cout << "temp: " << temp << endl;
+            cout << "TEMP ES: " << temp << endl;
             delete temp; //Se borra temp el cual es el inicio de la lista
         } else{
             temp = temp->GetNext();

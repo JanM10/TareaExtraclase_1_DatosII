@@ -4,10 +4,9 @@
 #include <iostream>
 #include <cstdlib>
 #include "Collector.h"
-#include "Node.h"
-
 
 using namespace std;
+
 
 Collector::Collector() {
     m_pTail = m_pHead = nullptr;
@@ -18,6 +17,8 @@ Collector::Collector() {
 bool Collector::Insertar(void* data) {
 //    cout << "Dato que ingresa al collector " << data << endl;
     Node* temp = new Node(data, nullptr); //AQUI HAY UN ERROR
+
+    SetPuntero(data);
 
     if(m_pHead == nullptr){
         m_pHead = temp;
@@ -57,8 +58,9 @@ void Collector::SetPuntero(void *puntero) {
 }
 
 void * Collector::GetPuntero() {
-    puntero = m_pHead;
-    return this->puntero;
+    cout << "ESTO ME ES LO QUE ME DA: " << puntero << endl;
+    cout << "QUE VALE HEAD?: " << m_pHead->GetPuntero() << endl;
+    return this->puntero; //Aqui esta el error
 }
 
 bool Collector::BorrarDirColector(void *data) {
@@ -67,7 +69,6 @@ bool Collector::BorrarDirColector(void *data) {
         Node* previous = m_pHead;
         if(m_pHead->GetPuntero() == data){ //REGRESAR EL ->GetData()
             m_pHead = m_pHead->GetNext();
-            cout << "temp: " << temp << endl;
             delete temp; //Se borra temp el cual es el inicio de la lista
         } else{
             temp = temp->GetNext();

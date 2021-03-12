@@ -22,6 +22,7 @@ public:
     void* GetPuntero();
 
      void SetData(int _newData);
+     void SetData(void* _newPtr);
      void SetNext(Node* _newNext);
      void SetPuntero(void *puntero);
 

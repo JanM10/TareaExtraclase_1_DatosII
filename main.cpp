@@ -18,16 +18,11 @@ int main() {
 
     list->Insertar(1);
     list->Insertar(2);
-    list->Insertar(3);
-    list->Insertar(4);
-    list->Insertar(5);
-    list->Insertar(6);
     list->Insertar(7);
     list->Print();
     cout << "_____________________________________" << endl;
 
     list->EliminarDato(7);
-    lista->PrintCollector();
     list->Print();
     cout << "_____________________________________" << endl;
 

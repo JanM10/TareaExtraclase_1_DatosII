@@ -11,7 +11,6 @@ using namespace std;
 
 Collector *colecotor = new Collector();
 
-
 Node::Node() {
     SetData(0);
     //this->pNext = nullptr;
@@ -24,13 +23,13 @@ void * Node::operator new(size_t _newData) {
     if (colecotor->RevisarCollector()){
         cout << "SE REUTILIZA UNA DIRECCION DE MEMORIA" << endl;
         void * puntero = colecotor->GetPuntero();
+        colecotor->BorrarDirColector(puntero);
+        cout << "PUNTERO: " << puntero << endl;
         return puntero;
     }else{
-        void * puntero = :: new Node();
+        void *puntero = :: new Node();
         return puntero;
     }
-    //cout << "puntero: " << puntero << endl;
-    //void * p = malloc(size); will also work fine
 }
 
 void Node::operator delete(void* _newNext) {
