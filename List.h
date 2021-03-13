@@ -7,13 +7,19 @@
 
 #include "Node.h"
 
+///Clase List.
+///Esta clase se encarga de almacenar enteros en una lista enlazada.
 class List {
 public:
-    List(); //Constructor
+    ///List es el constructor.
+    List();
+    ///Insertar, insterta un entero dentro de la lista.
+    bool Insertar(int data);
 
-    bool Insertar(int data); //Insertion of nodes to list
+    ///EliminarDato, borra un entero dentro de la lista.
     bool EliminarDato(int data);
 
+    ///Print, imprime los datos dentro de List.
     void Print();
 
 private:
