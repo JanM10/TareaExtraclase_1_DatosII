@@ -15,6 +15,7 @@ List::List() {
 //~
 bool List::Insertar(int data) {
     Node* temp = new Node(data, nullptr);
+//    cout << "puntero!!!!!!!!!!!!: " << temp << endl;
 
     if(m_pHead == nullptr){
         m_pHead = temp;
@@ -31,47 +32,6 @@ bool List::Insertar(int data) {
     return false;
 }
 
-//void List::RemoveFirst() {
-//    if(m_pHead != nullptr){
-//        Node* temp;
-//        m_pHead = m_pHead->GetNext();
-//        delete temp;
-//        temp = nullptr;
-//    }
-//}
-//
-//void List::RemoveLast() {
-//    if (m_pHead != nullptr){
-//        Node* temp = m_pHead;
-//
-//        while (temp->GetNext() != m_pTail){
-//            temp = temp->GetNext();
-//        }
-//        delete m_pTail;
-//        m_pTail = temp;
-//        m_pTail->SetNext(nullptr);
-//    }
-//}
-//
-//bool List::RemoveAt(int data) {
-//    if (m_pHead != nullptr){
-//        Node* temp = m_pHead;
-//        Node* previous = m_pHead;
-//
-//        while (previous->GetNext()->GetData() != data){
-////            cout << "previous: " << previous->GetData() << " data:" << data << endl;
-//            previous = temp;
-//            temp = temp->GetNext();
-//        }
-//        previous->SetNext(temp->GetNext());
-//        delete temp;
-//        temp = nullptr;
-//
-//        return true;
-//    }
-//    return false;
-//}
-
 bool List::EliminarDato(int data) {
     if(m_pHead != nullptr){
         Node* temp = m_pHead;
@@ -83,7 +43,6 @@ bool List::EliminarDato(int data) {
         } else{
             temp = temp->GetNext();
             while (temp->GetData() != data){
-//                cout << "previous: " << previous->GetData() << " data:" << data << endl;
                 previous = temp;
                 temp = temp->GetNext();
             }

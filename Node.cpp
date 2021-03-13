@@ -20,14 +20,17 @@ Node::Node() {
 }
 void * Node::operator new(size_t _newData) {
 //    cout<< "Overloading new operator with size: " << _newData << endl;
-    if (colecotor->RevisarCollector()){
-        cout << "SE REUTILIZA UNA DIRECCION DE MEMORIA" << endl;
+//    cout << "CUANTO VALE M: " << colecotor->m_Size << endl;
+    if (colecotor->m_Size > 0){
         void * puntero = colecotor->GetPuntero();
-        colecotor->BorrarDirColector(puntero);
+//        colecotor->BorrarDirColector(puntero);
+        colecotor->m_Size--;
         cout << "PUNTERO: " << puntero << endl;
         return puntero;
     }else{
         void *puntero = :: new Node();
+        cout << "size: " << colecotor->m_Size << endl;
+//        cout << "NUEVO: " << puntero << endl;
         return puntero;
     }
 }
@@ -36,6 +39,7 @@ void Node::operator delete(void* _newNext) {
     cout<< "Overloading delete operator " << endl;
     colecotor->Insertar(_newNext); //Se esta pasando la direccion de memoria de newNext no la correcta
     colecotor->PrintCollector();
+
 }
 
 Node::Node(int _newData, Node *_pNewNext) {

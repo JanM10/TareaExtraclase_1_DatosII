@@ -21,10 +21,13 @@ public:
     void SetPuntero(void *puntero);
     void* GetPuntero();
 
+    int m_Size;
+
 private:
     Node* m_pHead, *m_pTail;
-    int m_Size;
+
     void *puntero;
+    int contador;
 
 };
 

@@ -5,38 +5,31 @@
 #include <iostream>
 using namespace std;
 
-int variable = 12;
-int variable1 = 23;
-int variable2= 865;
-int *apuntador = &variable;
-
 List* list = new List();
 Collector* lista = new Collector();
-
 
 int main() {
 
     list->Insertar(1);
     list->Insertar(2);
-    list->Insertar(7);
+    list->Insertar(3);
+    list->Insertar(4);
+//    list->Insertar(5);
     list->Print();
     cout << "_____________________________________" << endl;
 
-    list->EliminarDato(7);
+    list->EliminarDato(1);
+    list->EliminarDato(2);
+    list->EliminarDato(3);
     list->Print();
     cout << "_____________________________________" << endl;
 
     list->Insertar(8);
+    list->Insertar(9);
+    list->Insertar(10);
     list->Print();
     cout << "_____________________________________" << endl;
-//    list->Insertar(7);
-//    list->Print();
 
-
-//    list->Insertar(5);
-//    list->Print();
-//    lista->PrintCollector();
-//    list->Print();
 
 }
 
