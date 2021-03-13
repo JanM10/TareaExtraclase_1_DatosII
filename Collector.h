@@ -18,7 +18,7 @@ public:
 
     bool RevisarCollector();
 
-    void SetPuntero(void *puntero);
+
     void* GetPuntero();
 
     int m_Size;

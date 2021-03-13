@@ -15,7 +15,6 @@ List::List() {
 //~
 bool List::Insertar(int data) {
     Node* temp = new Node(data, nullptr);
-//    cout << "puntero!!!!!!!!!!!!: " << temp << endl;
 
     if(m_pHead == nullptr){
         m_pHead = temp;
@@ -38,7 +37,6 @@ bool List::EliminarDato(int data) {
         Node* previous = m_pHead;
         if(m_pHead->GetData() == data){
             m_pHead = m_pHead->GetNext();
-            cout << "TEMP ES: " << temp << endl;
             delete temp; //Se borra temp el cual es el inicio de la lista
         } else{
             temp = temp->GetNext();
@@ -46,7 +44,6 @@ bool List::EliminarDato(int data) {
                 previous = temp;
                 temp = temp->GetNext();
             }
-            cout << "TEMP ES: " << temp << endl;
             previous->SetNext(temp->GetNext());
             delete temp;
 

@@ -13,23 +13,22 @@ Collector *colecotor = new Collector();
 
 Node::Node() {
     SetData(0);
-    //this->pNext = nullptr;
     SetNext(pNext);
     SetPuntero(puntero);
     GetPuntero();
 }
 void * Node::operator new(size_t _newData) {
-//    cout<< "Overloading new operator with size: " << _newData << endl;
+    cout<< "Overloading new operator with size: " << _newData << endl;
 //    cout << "CUANTO VALE M: " << colecotor->m_Size << endl;
     if (colecotor->m_Size > 0){
         void * puntero = colecotor->GetPuntero();
 //        colecotor->BorrarDirColector(puntero);
         colecotor->m_Size--;
-        cout << "PUNTERO: " << puntero << endl;
+//        cout << "PUNTERO: " << puntero << endl;
         return puntero;
     }else{
         void *puntero = :: new Node();
-        cout << "size: " << colecotor->m_Size << endl;
+//        cout << "size: " << colecotor->m_Size << endl;
 //        cout << "NUEVO: " << puntero << endl;
         return puntero;
     }
